@@ -2,7 +2,7 @@
 
 ## WEEK 2 FILES
 
-Necessary files for week 2 classes
+Necessary files for the classes
 
 ## INSTRUCTOR
 
