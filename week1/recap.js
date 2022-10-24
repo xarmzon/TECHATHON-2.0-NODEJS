@@ -533,7 +533,12 @@ class Person {
 }
 
 // inheriting parent class
-class Student extends Person {}
+class Student extends Person {
+  constructor(name) {
+    super(name);
+    this.id = "17/ebsdfsd";
+  }
+}
 
 let s1 = new Student("Rasta");
 s1.greet();
