@@ -35,6 +35,30 @@ const statusCodes = http.STATUS_CODES;
 // myReq.end();
 
 //todo: Create a server
+// http
+//   .createServer((request, response) => {})
+//   .listen(8000, () => {
+//     console.log("Server Running on Port http://localhost:8000");
+//   });
+
+const server = http.createServer((req, res) => {
+  console.log(req.url);
+  console.log(req.method);
+  req.on("data", (chunk) => {
+    //todo: chunk
+  });
+  req.on("end", () => {
+    //process all the data
+    console.log("object");
+  });
+  res.end("Data Received successfully.");
+});
+
+server.listen(9000, () => {
+  console.log("Server Running on http://localhost:9000");
+});
+
+// http.createServer((request, response) => {}).listen(8000);
 // host: localhost || 127.0.0.1
 // http.createServer((request,response)=>{}).listen(,callback)
 // http

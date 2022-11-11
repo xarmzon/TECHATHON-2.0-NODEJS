@@ -42,7 +42,7 @@ const path = require("path");
 // console.log(r1);
 // console.log(j1);
 
-// const r2 = path.resolve("tmp", "techathon.txt");
+// const r2 = path.resolve("/tmp", "techathon.txt");
 // console.log(r2);
 
 //todo: If the first parameter starts with a slash, that means it’s an absolute path:

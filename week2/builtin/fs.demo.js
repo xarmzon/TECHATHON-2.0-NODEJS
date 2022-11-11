@@ -9,10 +9,11 @@ const fsPromise = fs.promises;
 
 //todo: fs.readFile() & fs.readFileSync
 //  This method is used to read files on your computer.
-// fs.readFile("../files/myScores.txt", (err, data) => {
-//   if (err) throw err;
-//   console.log(data.toString());
-// });
+fs.readFile("../files/data.csv", (err, data) => {
+  if (err) throw err;
+  console.log(data.toString());
+});
+// fs.readFileSync();
 // fs.readFile("../files/hello.js", (err, data) => {
 //   console.log(err);
 //   //   if (err) throw err;
@@ -24,12 +25,25 @@ const fsPromise = fs.promises;
 // fs.writeFile(path, data, callback);
 // fs.writeFile(
 //   "../files/write.txt",
-//   "This is the text I want to write",
+//   "This is the text I want to write-From Rasta",
 //   (err) => {
 //     if (err) throw err;
 //     console.log("Your file has been written successfully");
 //   }
 // );
+// fs.writeFile("../files/write.js", "console.log('This is a text')", (err) => {
+//   if (err) throw err;
+//   console.log("Your file has been written successfully");
+// });
+// const dataX = `
+//     name,gender,track
+//     rasta,male,node
+//     tyler,male,react
+// `;
+// fs.writeFile("../files/write.csv", dataX, (err) => {
+//   if (err) throw err;
+//   console.log("Your file has been written successfully");
+// });
 
 // fsPromise
 //   .writeFile("../files/write.txt", "This is the text I want to write - promise")

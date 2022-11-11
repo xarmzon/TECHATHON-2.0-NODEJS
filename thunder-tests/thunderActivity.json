@@ -1,0 +1,63 @@
+[
+  {
+    "_id": "b82fa755-121e-41fe-a230-24a5cb12dae4",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:9000",
+    "url": "http://localhost:9000/accountsXXXXX",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-11-07T17:13:18.553Z",
+    "modified": "2022-11-09T17:02:51.421Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "b86606a1-4760-41b5-977b-a2a74ef09d5c",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:9000/register/user",
+    "url": "http://localhost:8000/accounts",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-11-07T17:13:48.353Z",
+    "modified": "2022-11-11T16:56:42.700Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Stack\",\n  \"track\": \"nodejs\",\n  \"gender\": \"female\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "ebbf8f62-91d1-4be6-8e6c-24e12d4a3b74",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:9000/login",
+    "url": "http://localhost:9000/login",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-11-07T17:14:04.914Z",
+    "modified": "2022-11-07T17:14:04.970Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "c3073b99-3c99-4a54-bb94-7152cee2a2cf",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:9000/login",
+    "url": "http://localhost:9000/login",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-11-07T17:14:11.962Z",
+    "modified": "2022-11-07T17:14:11.993Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]

@@ -5,6 +5,7 @@ const fs = require("fs");
 //This can be done either via creating an instance of the class itself,
 //or by implementing it through a custom class and then creating an instance of that class.
 const door = new EventEmitter();
+const food = new EventEmitter();
 
 class Logger extends EventEmitter {
   constructor() {
@@ -49,7 +50,7 @@ door.addListener("leave", (house) => {
 
 // emit("event_name", param1, param2, param3);
 
-door.addListener("locked", (by, message) => {
+door.addListener("locked", ({ by, message }) => {
   console.log(
     `This door is locked by ${by} and here is the message for you: '${message}'`
   );
@@ -59,14 +60,15 @@ door.addListener("locked", (by, message) => {
 // Emits an event.
 //It synchronously calls every event listener in the order they were registered.
 // emitter.emit(eventName,param1,parm2,parm3)
-// door.emit("jam", "Rasta");
+door.emit("jam", "Rasta");
+door.emit("open", "Green");
 // door.emit("jam", "Green");
 // door.emit("jam", "Kabir");
 // door.emit("jam", "Tosin");
 // door.emit("jam", "Ezekiel");
 // door.emit("leave");
 // door.emit("leave", { address: "Ilorin", no: "2555" });
-// door.emit("locked", "Rasta", "Please come back tomorrow");
+door.emit("locked", {by:"Rasta", message:"Please come back tomorrow"});
 // logger.log("This is Techathon NodeJS Track ");
 
 //todo: emitter.once()

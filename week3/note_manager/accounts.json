@@ -1,0 +1,26 @@
+[
+  {
+    "name": "rasta",
+    "track": "nodejs",
+    "gender": "male",
+    "createdAt": "2022-11-11T16:37:36.536Z",
+    "updatedAt": "2022-11-11T16:37:36.536Z",
+    "id": 1
+  },
+  {
+    "name": "doyin",
+    "track": "nodejs",
+    "gender": "female",
+    "createdAt": "2022-11-11T16:49:26.226Z",
+    "updatedAt": "2022-11-11T16:49:26.226Z",
+    "id": 2
+  },
+  {
+    "name": "Stack",
+    "track": "nodejs",
+    "gender": "female",
+    "createdAt": "2022-11-11T16:50:00.794Z",
+    "updatedAt": "2022-11-11T16:50:00.794Z",
+    "id": 3
+  }
+]
