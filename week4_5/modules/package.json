@@ -1,0 +1,19 @@
+{
+  "name": "modules",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ii": "npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "shortid": "^2.2.16"
+  },
+  "devDependencies": {
+    "cuid": "^2.1.8"
+  }
+}
