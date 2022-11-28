@@ -97,6 +97,13 @@ app.post("/short", (req, res) => {
   }
 });
 
+// "/books" ->all
+// "/books/id/:id" -> specific
+// "/books/name/:name" =>
+
+// "/books/id"
+// "/books/name"
+
 //dynamic path
 app.get("/:short", (req, res) => {
   const { short } = req.params;
