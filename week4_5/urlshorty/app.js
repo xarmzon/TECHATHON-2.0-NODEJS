@@ -28,6 +28,7 @@ app.get("/short", (req, res) => {
   });
 });
 
+//static path
 app.post("/short", (req, res) => {
   console.log(req.method);
   const { long_url } = req.body;
@@ -54,6 +55,30 @@ app.post("/short", (req, res) => {
     createdAt: new Date().toISOString(),
   };
   if (fileExist) {
+    //todo: read the data
+    fs.readFile(linkPath, (err, data_) => {
+      if (err) {
+        return res.status(500).json({
+          msg: "An error occurred while creating your link. Please try again later",
+          success: false,
+        });
+      }
+      const links = JSON.parse(data_.toString());
+      data.id = links.length + 1;
+      links.push(data);
+      fs.writeFile(linkPath, JSON.stringify(links), (err) => {
+        if (err) {
+          return res.status(500).json({
+            msg: "An error occurred while creating your link. Please try again later",
+            success: false,
+          });
+        }
+        res.status(201).json({
+          msg: "Link shorten successfully",
+          link,
+        });
+      });
+    });
   } else {
     data.id = 1;
     const links = [data];
@@ -70,6 +95,47 @@ app.post("/short", (req, res) => {
       });
     });
   }
+});
+
+//dynamic path
+app.get("/:short", (req, res) => {
+  const { short } = req.params;
+  const { redirect } = req.query;
+  console.log(redirect);
+  if (!short) {
+    return res.status(400).json({
+      msg: "'short' path is missing in the request. Please try again",
+      success: false,
+    });
+  }
+
+  fs.readFile(linkPath, (err, data_) => {
+    if (err) {
+      return res.status(500).json({
+        msg: "An error occurred while reading your link. Please try again later",
+        success: false,
+      });
+    }
+    const links = JSON.parse(data_.toString());
+
+    const linkData = links.find((link) => {
+      return link.short.includes(short);
+    });
+    if (!linkData) {
+      return res.status(404).json({
+        msg: "Sorry, We can't find the link you're looking for. Please try again with a valid short link",
+        success: false,
+      });
+    }
+    if (!redirect) {
+      return res.json({
+        msg: "Fetched Successfully",
+        ...linkData,
+      });
+    }
+    // res.status(302)
+    res.redirect(linkData.long);
+  });
 });
 
 app.listen(PORT, () => {
