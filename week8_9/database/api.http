@@ -1,0 +1,9 @@
+@baseURL = http://localhost:8000
+### /
+GET {{baseURL}}
+
+
+
+### /status
+GET {{baseURL}}/status
+
