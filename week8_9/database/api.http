@@ -3,7 +3,20 @@
 GET {{baseURL}}
 
 
+### /books -> Get All Books
+GET {{baseURL}}/books
 
-### /status
-GET {{baseURL}}/status
 
+### /books -> Create Book
+POST {{baseURL}}/books
+Content-Type: application/json
+
+{
+    "title": "From VS Code Extension",
+    "author": "VS Code",
+    "price": 0
+}
+
+
+### /book -> Get Single Book
+GET http://localhost:8000/books/id/63936d60b3683fba734cb964
